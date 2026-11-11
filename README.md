@@ -28,6 +28,42 @@ The system also includes countdown displays, OLED screens showing traffic inform
 - Resistors and other required wiring components
 - USB power supply
 
+## Hardware Connections
+
+### Traffic Light LEDs
+
+| Component | ESP32 GPIO |
+|---|---:|
+| Traffic 1 Red | 25 |
+| Traffic 1 Yellow | 26 |
+| Traffic 1 Green | 27 |
+| Traffic 2 Red | 18 |
+| Traffic 2 Yellow | 19 |
+| Traffic 2 Green | 23 |
+
+### Ultrasonic Sensors
+
+| Sensor | Trigger | Echo |
+|---|---:|---:|
+| Traffic 1 | GPIO 16 | GPIO 35 |
+| Traffic 2 | GPIO 17 | GPIO 34 |
+
+### OLED Displays
+
+| Display | SDA | SCL |
+|---|---:|---:|
+| OLED 1 (Hardware I2C) | GPIO 21 | GPIO 22 |
+| OLED 2 (Software I2C) | GPIO 13 | GPIO 14 |
+
+### TM1650 Displays
+
+| Display | SDA | SCL |
+|---|---:|---:|
+| Display 1 | GPIO 21 | GPIO 22 |
+| Display 2 | GPIO 32 | GPIO 33 |
+
+**Important:** The ESP32 uses 3.3V GPIO logic. Make sure the ultrasonic sensor Echo outputs are reduced to a safe 3.3V level before connecting them to the ESP32.
+
 ## Technologies and Libraries
 
 - Arduino IDE
